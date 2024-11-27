@@ -1,0 +1,24 @@
+header {
+    /* justify-content: space-between; */
+    display: flex;
+    margin: 30px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+}
+
+a {
+    margin: 30px;
+}
+
+.iframecontent {
+    display: flex;
+    width: 90vh;
+}
+
+iframe {
+    display: flex;
+    width: 98%;
+    height: 90vh;
+}
