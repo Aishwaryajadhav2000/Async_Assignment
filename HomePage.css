@@ -1,15 +1,21 @@
 header {
     /* justify-content: space-between; */
     display: flex;
-    margin: 30px;
+    /* margin: 30px; */
     align-items: center;
     text-align: center;
     justify-content: center;
+    background-color: #0077b6;
+    height: 90px;
 
 }
 
 a {
     margin: 30px;
+    color: white;
+    font-size: larger;
+    text-decoration: none;
+
 }
 
 .iframecontent {
@@ -21,4 +27,7 @@ iframe {
     display: flex;
     width: 98%;
     height: 90vh;
+}
+a:hover{
+    color: #f4d03f;
 }
