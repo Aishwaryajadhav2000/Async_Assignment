@@ -1,13 +1,15 @@
 
 const takeDiv = document.getElementById("APIData");
 const createDiv = document.createElement("div");
+createDiv.className = "creatDiv"
 const createPara = document.createElement("p");
+createPara.className ="para"
 createDiv.appendChild(createPara);
 takeDiv.appendChild(createDiv);
 
 async function viewButton() {
 
-    createPara.innerHTML = "Please Wait";
+    createPara.innerHTML = "Please Wait Data is Loading.";
 
     console.log("button clicked");
 
@@ -39,6 +41,7 @@ function createCards(result) {
 function disabledButton() {
     const viewButton = document.getElementById("viewButton");
     viewButton.disabled = true; 
+    viewButton.textContent = "Data Loaded";
 }
 
 

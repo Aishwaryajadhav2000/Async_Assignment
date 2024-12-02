@@ -1,13 +1,7 @@
 
-
-// const viewButon = document.getElementById("viewButton").addEventListener("click")
-
-// viewButon = new Promise(function (resolve , reject){
-
-// })
-
 const takeDiv = document.getElementById("APIData");
 const createDiv = document.createElement("div");
+createDiv.className = "creatDiv"
 const createPara = document.createElement("p");
 createPara.className ="para"
 createDiv.appendChild(createPara);
@@ -15,15 +9,16 @@ takeDiv.appendChild(createDiv);
 
 function viewButton() {
 
+    console.log("button Clicked")
+
     const myPromise = new Promise((myResolve, myReject)=> {
 
         //pending state
-        createPara.textContent = "Wait Data is Loading";
+        createPara.textContent = "Please Wait Data is Loading.";
 
         const timeOutDuration = 2000;
 
         setTimeout(() => {
-
 
             if (timeOutDuration < 5000) {
 
@@ -38,10 +33,10 @@ function viewButton() {
 
                     takeDiv.innerHTML = createCard;
                     myResolve("Successfull");
+                    disabledButton();
+                }).catch(error => {
+                    myReject(error.message)
                 })
-
-                disabledButton();
-
             } else {
                 console.log("else called");
                 myReject("Operation Timed Out")
@@ -54,7 +49,7 @@ function viewButton() {
     console.log(myPromise);
 
     myPromise.then(result => console.log("result calledd", result));
-    myPromise.catch(err => createPara.textContent = err);
+    myPromise.catch(error => createPara.textContent = error);
 
 }
 
@@ -62,4 +57,5 @@ function viewButton() {
 function disabledButton() {
     const viewButton = document.getElementById("viewButton");
     viewButton.disabled = true; 
+    viewButton.textContent = "Data Loaded"
 }

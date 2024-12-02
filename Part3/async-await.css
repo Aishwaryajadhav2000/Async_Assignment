@@ -4,14 +4,23 @@
     padding: 10px;
     margin: 10px;
 }
-button{
+button {
     padding: 10px;
     border-radius: 20px;
+    background-color: #0077b6;
+    color: white;
+
 }
 
-.para{
-    justify-content: center;
-    display: flex;
+.creatDiv {
+    /* background-color: brown; */
+    display: inline-block;
+    width: 100%;
+
+    .para {
+        justify-content: center;
+        display: flex;
+    }
 }
 .card{
     width: 300px;
@@ -28,5 +37,8 @@ button{
    /* background-color: brown; */
    justify-content: space-between;
 }
-
+button:hover{
+    background-color: #f4d03f;
+    color: white;
+}
 

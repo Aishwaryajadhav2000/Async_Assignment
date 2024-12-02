@@ -4,16 +4,27 @@
     padding: 10px;
     margin: 10px;
 }
-button{
+
+button {
     padding: 10px;
     border-radius: 20px;
+    background-color: #0077b6;
+    color: white;
+
 }
 
-.para{
-    justify-content: center;
-    display: flex;
+.creatDiv {
+    /* background-color: brown; */
+    display: inline-block;
+    width: 100%;
+
+    .para {
+        justify-content: center;
+        display: flex;
+    }
 }
-.card{
+
+.card {
     width: 300px;
     /* flex-basis: 25%; */
     border-radius: 10px;
@@ -21,12 +32,15 @@ button{
     border: 2px solid black;
     margin: 5px;
 }
-#APIData{
+
+#APIData {
     flex-wrap: wrap;
     display: flex;
-   /* padding: 20px; */
-   /* background-color: brown; */
-   justify-content: space-between;
+    /* padding: 20px; */
+    /* background-color: brown; */
+    justify-content: space-between;
 }
-
-
+button:hover{
+    background-color: #f4d03f;
+    color: white;
+}
