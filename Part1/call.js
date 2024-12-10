@@ -1,12 +1,20 @@
 
+const viewBtn = document.getElementById('viewButton');
+viewBtn("click", function () {
+    console.log("button clicked");
+})
+
 //calling the view button function on click
-function viewButton() {
+function viewButton(createButtonText, callbackbtntext) {
 
     //showing msg while fetching api
     const WaitMessage = document.getElementById("WaitMessage");
     WaitMessage.innerHTML = "Please Wait, Data is Loading..."
 
     setTimeout(() => {
+
+        const buttonText = createButtonText;
+        callbackbtntext(buttonText);
 
         //Fetching API data
         fetch('https://dummyjson.com/posts').then(response => response.json()).then(data => {
@@ -35,12 +43,12 @@ function displayapidata(posts) {
     document.getElementById("APIData").innerHTML = createCard;
 
     //Disabled button call after Displying Data
-    disabledButton();
-
 }
 //Disabled Button after Displying Data
-function disabledButton() {
-    const viewButton = document.getElementById("viewButton");
-    viewButton.disabled = true;
-    viewButton.innerHTML = "Data Loaded"
+function disabledButton(buttonText) {
+    console.log("disabledbutton called", buttonText);
+    document.getElementById('viewButton').innerHTML = buttonText
 }
+
+viewButton("Data Loaded", disabledButton);
+
