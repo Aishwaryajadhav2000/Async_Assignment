@@ -22,6 +22,9 @@ function viewButton() {
     }, 5000)
 
 }
+function fetchapi(){
+    
+}
 
 function displayapidata(posts) {
     console.log("displayapidata function called");
