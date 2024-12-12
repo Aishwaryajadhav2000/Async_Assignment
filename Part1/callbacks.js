@@ -1,6 +1,6 @@
 
 //calling the view button function on click
-function viewButton(createButtonText, callbackbtntext, apiCallback) {
+function viewButton(createButtonText, callbackbtntext, apiCallback, waitmsg, waiterrormsg) {
 
     //showing msg while fetching api
     const WaitMessage = document.getElementById("WaitMessage");
@@ -15,14 +15,16 @@ function viewButton(createButtonText, callbackbtntext, apiCallback) {
             then(data => {
 
                 apiCallback(data.posts)
-                WaitMessage.innerHTML = "Callback executed after 5 seconds"
+                // WaitMessage.innerHTML = "Callback executed after 5 seconds"
+                WaitMessage.innerHTML= waitmsg;
 
                 const buttonText = createButtonText;
                 callbackbtntext(buttonText);
 
             }).catch(error => {
                 console.log("display error", error);
-                WaitMessage.innerHTML = "Please try again later..."
+                // WaitMessage.innerHTML = "Please try again later..."
+                WaitMessage.innerHTML = waiterrormsg;
             })
 
     }, 5000)
@@ -58,7 +60,7 @@ function viewButtonClicked() {
         WaitMessage.innerHTML = "Data has been loaded already..."
     }else {
         console.log("else");
-        viewButton("Data Loaded", disabledButton, displayapidata);
+        viewButton("Data Loaded", disabledButton, displayapidata, "Callback executed after 5 seconds" , "Please try again later...");
 
     }
 
