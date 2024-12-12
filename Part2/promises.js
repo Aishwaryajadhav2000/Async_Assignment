@@ -59,5 +59,6 @@ function viewButton() {
 function disabledButton() {
     const viewButton = document.getElementById("viewButton");
     viewButton.disabled = true; 
+    //button text chang after displaying data
     viewButton.textContent = "Data Loaded"
 }

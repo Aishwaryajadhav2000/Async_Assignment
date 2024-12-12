@@ -1,32 +1,24 @@
 
-const takeDiv = document.getElementById("APIData");
-const createDiv = document.createElement("div");
-createDiv.className = "creatDiv"
-const WaitMessage = document.createElement("p");
-WaitMessage.className ="para"
-createDiv.appendChild(WaitMessage);
-takeDiv.appendChild(createDiv);
-
 //calling the view button function on click
 function viewButton(createButtonText, callbackbtntext, apiCallback) {
 
     //showing msg while fetching api
     const WaitMessage = document.getElementById("WaitMessage");
-    // WaitMessage.innerHTML = "Please Wait, Data is Loading..."
-    WaitMessage.innerHTML = `<span>Please Wait..</span> <span> Data is Loading...</span>`
+    WaitMessage.innerHTML = `<span>Please Wait , </span> <span> Data is Loading...</span>`
 
     setTimeout(() => {
 
-        const buttonText = createButtonText;
-        callbackbtntext(buttonText);
+       
 
         //Fetching API data
         fetch('https://dummyjson.com/posts').then(response => response.json()).
             then(data => {
 
-                // displayapidata(data.posts)
                 apiCallback(data.posts)
                 WaitMessage.innerHTML = "Callback executed after 5 seconds"
+
+                const buttonText = createButtonText;
+                callbackbtntext(buttonText);
 
             }).catch(error => {
                 console.log("display error", error);
@@ -37,6 +29,7 @@ function viewButton(createButtonText, callbackbtntext, apiCallback) {
 
 }
 
+//Displaying data in card format
 function displayapidata(posts) {
     console.log("displayapidata function called");
     // Creating Card after calling API
@@ -59,11 +52,11 @@ function disabledButton(buttonText) {
 //clicking the button functionality
 function viewButtonClicked() {
 
+    //if the button is already clicked 
     if (document.getElementById('viewButton').textContent == "Data Loaded") {
         console.log("If condition.. Data has been loaded already")
         WaitMessage.innerHTML = "Data has been loaded already..."
-
-    } else {
+    }else {
         console.log("else");
         viewButton("Data Loaded", disabledButton, displayapidata);
 
