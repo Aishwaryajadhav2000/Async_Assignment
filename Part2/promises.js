@@ -14,13 +14,15 @@ function viewButton() {
     const myPromise = new Promise((myResolve, myReject)=> {
 
         //pending state
-        createPara.textContent = "Please Wait Data is Loading.";
+        // createPara.textContent = "Please Wait Data is Loading.";
+        createPara.innerHTML = `<span>Please Wait..</span> <span> Data is Loading...</span>`
 
-        const timeOutDuration = 2000;
+
+        const timeOutDuration = 5000;
 
         setTimeout(() => {
 
-            if (timeOutDuration < 5000) {
+            if (timeOutDuration <= 5000) {
 
                 fetch("https://dummyjson.com/posts").then(response => response.json())
                 .then(data => {
@@ -35,7 +37,7 @@ function viewButton() {
                     myResolve("Successfull");
                     disabledButton();
                 }).catch(error => {
-                    myReject(error.message)
+                    myReject(error.message +  "... Please check your network connection")
                 })
             } else {
                 console.log("else called");

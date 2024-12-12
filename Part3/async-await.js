@@ -19,6 +19,7 @@ async function viewButton() {
         createCards(result);
     } catch (error) {
         console.log("error", error);
+        createPara.innerHTML = error.message + "... Please check your network connection";
     }
 
     disabledButton();

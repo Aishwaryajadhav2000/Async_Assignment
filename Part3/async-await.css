@@ -5,12 +5,53 @@
     margin: 10px;
 }
 button {
-    padding: 10px;
+    padding: 15px;
     border-radius: 20px;
-    background-color: #0077b6;
+    background-color: #5bbdf2;
     color: white;
+    font-size: larger;
+    box-shadow: 3px 5px 0 0px rgb(3, 79, 124);
+}
+button:hover{
+    color: #be9d18;
+    background-color: #3f0f9f;
+    font-weight: bold;
+    box-shadow: 3px 5px 0 0px #be9d18;
 
 }
+.para {
+    justify-content: center;
+    display: flex;
+    font-size: larger;
+}
+
+.para span {
+    animation: waitmsg 1s ease infinite;
+    opacity: 0;
+}
+
+.para span:nth-child(1) {
+    animation-delay: 0s;
+    /* First word */
+}
+
+.para span:nth-child(2) {
+    animation-delay: 1s;
+}
+
+@keyframes waitmsg {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+        /* Adds slight movement */
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 .creatDiv {
     /* background-color: brown; */
@@ -20,16 +61,51 @@ button {
     .para {
         justify-content: center;
         display: flex;
+        font-size: larger;
     }
 }
-.card{
+.card {
     width: 300px;
     /* flex-basis: 25%; */
     border-radius: 10px;
     padding: 15px;
     border: 2px solid black;
     margin: 5px;
+    box-shadow: 5px 7px 0 5px rgb(105, 166, 201);
+    margin-top: 10px;
+    font-family: 'Arial', 'Helvetica', sans-serif;
 }
+
+.card:nth-child(odd) {
+    color: white;
+    background: linear-gradient(135deg, #ff6a00, #ee0979);
+}
+
+.card:nth-child(even) {
+    /* background-color: lightblue;  */
+    color: white;
+    background: linear-gradient(135deg, #43cea2, #185a9d);
+    /* background: linear-gradient(135deg, #8e2de2, #4a00e0); */
+
+}
+
+.card:nth-child(3n) {
+    /* background: linear-gradient(135deg, #8e2de2, #4a00e0); */
+    background: linear-gradient(135deg, #a85cea, #2d0480);
+
+}
+
+.card:hover {
+    background: #0096c7;
+    color: white;
+    box-shadow: 5px 7px 0 5px rgb(2, 69, 108);
+    font-size: larger;
+
+    h3 {
+        color: #e8c22d;
+    }
+}
+
 #APIData{
     flex-wrap: wrap;
     display: flex;
@@ -37,8 +113,5 @@ button {
    /* background-color: brown; */
    justify-content: space-between;
 }
-button:hover{
-    background-color: #f4d03f;
-    color: white;
-}
+
 

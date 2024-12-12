@@ -1,3 +1,17 @@
+/* 
+header{
+    position: fixed;
+    background-color: brown;
+    width: 100%;
+    height: 70px;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+}
+main{
+    margin-top: 50px;
+} */
 #btn {
     display: flex;
     justify-content: center;
@@ -20,18 +34,13 @@ button:hover{
     box-shadow: 3px 5px 0 0px #be9d18;
 
 }
-.creatDiv {
-    /* background-color: brown; */
-    display: inline-block;
-    width: 100%;
 
-    .para {
-        justify-content: center;
-        display: flex;
-        font-size: larger;
-
-    }
+.para {
+    justify-content: center;
+    display: flex;
+    font-size: larger;
 }
+
 .para span {
     animation: waitmsg 1s ease infinite;
     opacity: 0;
@@ -101,7 +110,6 @@ button:hover{
     }
 }
 
-
 #APIData {
     flex-wrap: wrap;
     display: flex;
@@ -109,3 +117,8 @@ button:hover{
     /* background-color: brown; */
     justify-content: space-between;
 }
+
+/* .buttonstart:hover{
+    background-color: #f4d03f;
+    color: white;
+} */

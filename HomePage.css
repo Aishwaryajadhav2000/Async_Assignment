@@ -29,5 +29,9 @@ iframe {
     height: 90vh;
 }
 a:hover{
-    color: #f4d03f;
+    color: #3f0f9f;
+    padding: 15px;
+    background-color: #f4d03f;
+    border-radius: 15px;
+    font-weight: bold;
 }
