@@ -9,6 +9,13 @@ takeDiv.appendChild(createDiv);
 
 function viewButton() {
 
+    
+    //Hide popup after clicking on button
+    document.getElementById("toggle").style.display = "none";
+
+    //Changing the button position style after clicking on button
+    document.getElementById("viewButton").style.position = "relative"
+
     console.log("button Clicked")
 
     const myPromise = new Promise((myResolve, myReject)=> {

@@ -9,6 +9,12 @@ takeDiv.appendChild(createDiv);
 
 async function viewButton() {
 
+      //Hide popup after clicking on button
+      document.getElementById("toggle").style.display = "none";
+
+      //Changing the button position style after clicking on button
+      document.getElementById("viewButton").style.position = "relative"
+
     createPara.innerHTML = "Please Wait Data is Loading.";
 
     console.log("button clicked");

@@ -5,6 +5,7 @@
     margin: 10px;
 }
 button {
+    position: absolute;
     padding: 15px;
     border-radius: 20px;
     background-color: #5bbdf2;
@@ -18,6 +19,24 @@ button:hover{
     font-weight: bold;
     box-shadow: 3px 5px 0 0px #be9d18;
 
+}
+/* toggle styling*/
+#toggle{
+    margin-left: 27%;
+    animation: toggle;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+
+@keyframes toggle{
+
+    from{
+        margin-left: 27%;
+    }
+    to{
+        margin-left: 22%;
+    }
 }
 .para {
     justify-content: center;

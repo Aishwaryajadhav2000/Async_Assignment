@@ -1,4 +1,5 @@
 
+/* Button Styling */
 #btn {
     display: flex;
     justify-content: center;
@@ -7,6 +8,8 @@
 }
 
 button {
+    /* position:relative; */
+    position:absolute;
     padding: 15px;
     border-radius: 20px;
     background-color: #5bbdf2;
@@ -14,14 +17,34 @@ button {
     font-size: larger;
     box-shadow: 3px 5px 0 0px rgb(3, 79, 124);
 }
+
+/* Button Hover Styling */
 button:hover{
     color: #be9d18;
     background-color: #3f0f9f;
     font-weight: bold;
     box-shadow: 3px 5px 0 0px #be9d18;
-
+}
+/* toggle styling*/
+#toggle{
+    margin-left: 27%;
+    animation: toggle;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
 }
 
+@keyframes toggle{
+
+    from{
+        margin-left: 27%;
+    }
+    to{
+        margin-left: 22%;
+    }
+}
+
+/* Paragraph styling - Wait Message*/
 .para {
     justify-content: center;
     display: flex;
@@ -35,7 +58,6 @@ button:hover{
 
 .para span:nth-child(1) {
     animation-delay: 0s;
-    /* First word */
 }
 
 .para span:nth-child(2) {
@@ -46,7 +68,6 @@ button:hover{
     0% {
         opacity: 0;
         transform: translateY(10px);
-        /* Adds slight movement */
     }
 
     100% {
@@ -55,6 +76,7 @@ button:hover{
     }
 }
 
+/* Card styling */
 .card {
     width: 300px;
     /* flex-basis: 25%; */
@@ -86,6 +108,7 @@ button:hover{
 
 }
 
+/* Card Hover styling */
 .card:hover {
     background: #0096c7;
     color: white;
