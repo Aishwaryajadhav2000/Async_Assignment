@@ -19,6 +19,7 @@ button:hover{
     background-color: #3f0f9f;
     font-weight: bold;
     box-shadow: 3px 5px 0 0px #be9d18;
+    cursor: pointer;
 
 }
 /* toggle styling*/
@@ -38,6 +39,13 @@ button:hover{
     to{
         margin-left: 22%;
     }
+}
+#message{
+    display: flex;
+    justify-content: center;
+    font-size: larger;
+    font-weight: bold;
+    color: brown;
 }
 .creatDiv {
     /* background-color: brown; */

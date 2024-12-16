@@ -24,6 +24,8 @@ button:hover{
     background-color: #3f0f9f;
     font-weight: bold;
     box-shadow: 3px 5px 0 0px #be9d18;
+    cursor: pointer;
+
 }
 /* toggle styling*/
 #toggle{

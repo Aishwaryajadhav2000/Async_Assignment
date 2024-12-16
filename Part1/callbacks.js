@@ -3,7 +3,7 @@
 const displayingData = document.getElementById("APIData");
 
 //calling the view button function on click
-function viewButton(createButtonText, callbackbtntext, apiCallback, waitmsg, waiterrormsg) {
+function viewButton(createButtonText, callbackbtntext, apiCallback, waitmsg, waiterrormsg , syntaxerror) {
 
     //showing msg while fetching api
     const WaitMessage = document.getElementById("WaitMessage");
@@ -23,6 +23,7 @@ function viewButton(createButtonText, callbackbtntext, apiCallback, waitmsg, wai
                 WaitMessage.innerHTML = `${waiterrormsg} ${response.status} ${response.statusText}`;
             }
             return response.json();
+           
         }).
             then(data => {
                 console.log("response", data);
@@ -40,23 +41,30 @@ function viewButton(createButtonText, callbackbtntext, apiCallback, waitmsg, wai
 
             }).catch(error => {
                 console.log("API Fetch error", error);
-                // WaitMessage.innerHTML = "Please try again later..."
-                WaitMessage.innerHTML = waiterrormsg;
+
+                if(error instanceof TypeError){
+                    console.log("type error");
+                    WaitMessage.innerHTML = error.message + " " + waiterrormsg
+                }else if(error instanceof SyntaxError){
+                    WaitMessage.innerHTML = syntaxerror
+                }else{
+                    WaitMessage.innerHTML = waiterrormsg;
+                }
                 throw new Error(waiterrormsg);
             })
     }, 5000)
 }
 
 //Creating another function to fetch api and error handling
-// function fetchAPI(successfull , callbackerrors){
-// fetch('https://dummyjson.com/posts').then((response) => {
-//     if (!response.ok) {
-//         WaitMessage.innerHTML = `${waiterrormsg} ${response.status} ${response.statusText}`;
-//     }
-//     return response.json();
-// }).then((data) => successfull(data))
-// .catch((error)=>callbackerrors(error));
-// }
+function fetchAPI(successfull , callbackerrors){
+fetch('https://dummyjson.com/posts').then((response) => {
+    if (!response.ok) {
+        WaitMessage.innerHTML = `${waiterrormsg} ${response.status} ${response.statusText}`;
+    }
+    return response.json();
+}).then((data) => successfull(data))
+.catch((error)=>callbackerrors(error));
+}
 
 //Displaying data in card format
 function displayapidata(posts) {
@@ -102,6 +110,6 @@ function viewButtonClicked() {
         WaitMessage.innerHTML = "Data has been loaded already..."
     } else {
         console.log("else, button is clicked now");
-        viewButton("Data Loaded", disabledButton, displayapidata, "Callback executed after 5 seconds", "Please try again later...");
+        viewButton("Data Loaded", disabledButton, displayapidata, "Callback executed after 5 seconds", "Please try again later..." , "WrongAPI");
     }
 }
