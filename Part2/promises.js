@@ -54,6 +54,9 @@ function viewButton() {
                             myReject(error.message + "... Please check your network connection")
                         } else if (error instanceof ReferenceError) {
                             myReject("Please check your API")
+                        } else if (!Array.isArray(data.posts)) {
+                           myReject("Invalid data structure received from API");
+                            throw new Error("Invalid data structure received from API");
                         } else {
                             myReject(error.message)
                         }
