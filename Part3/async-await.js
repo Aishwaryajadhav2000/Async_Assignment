@@ -60,6 +60,9 @@ function createCards(result) {
     //Disabled button after displaying data
     disabledButton();
 
+    //Displaying message above the cards
+    document.getElementById("message").textContent = "DATA FETCH SUCCESSFULLY..."
+
 }
 
 //Disabled Button after Displying Data

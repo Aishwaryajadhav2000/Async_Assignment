@@ -51,6 +51,8 @@ button:hover{
     justify-content: center;
     display: flex;
     font-size: larger;
+    font-weight: bold;
+    color: brown;
 }
 
 .para span {

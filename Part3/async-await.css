@@ -40,6 +40,13 @@ button:hover{
         margin-left: 22%;
     }
 }
+#message{
+    display: flex;
+    justify-content: center;
+    font-size: larger;
+    font-weight: bold;
+    color: brown;
+}
 .para {
     justify-content: center;
     display: flex;

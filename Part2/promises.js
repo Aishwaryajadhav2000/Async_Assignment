@@ -60,6 +60,8 @@ function viewButton() {
                     })
             } else {
                 console.log("else called");
+
+                //Displaying Error
                 myReject("Operation Timed Out")
             }
         }, timeOutDuration)
